@@ -1,0 +1,59 @@
+@import url("https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: #201e1d;
+  --fg: #e0e0e0;
+  --muted: #a1a1a1;
+
+  --top-gap: 48px;
+}
+
+.light {
+  --bg: #c8c8ca;
+  --fg: #282828;
+  --muted: #424040;
+}
+
+html,
+body {
+  background: var(--bg);
+  color: var(--fg);
+  height: auto;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-size: 13px;
+}
+
+.no-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.font-geist {
+  font-family: "Geist", sans-serif;
+}
+
+.text-muted {
+  color: var(--muted);
+}
+
+.text-fg {
+  color: var(--fg);
+}
+
+.page {
+  padding-top: var(--top-gap);
+}
