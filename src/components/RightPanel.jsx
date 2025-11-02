@@ -17,6 +17,7 @@ const PROJECTS = [
     live: "#",
     repo: "https://github.com/Aeschyluos/catalog",
   },
+<<<<<<< HEAD
   // {
   //   id: "bites",
   //   title: "BiTEs",
@@ -29,6 +30,20 @@ const PROJECTS = [
   //   live: "#",
   //   repo: "na",
   // },
+=======
+  {
+    id: "bites",
+    title: "BiTEs",
+    short: "Online food delivery application centralized in Binus",
+    description:
+      "An imaginary application for in-campus/near-campus short-distance food delivery app targeting BINUS students.",
+    tech: ["Figma"],
+    img: bitesLogo,
+    year: 2023,
+    live: "#",
+    repo: "na",
+  },
+>>>>>>> 1548258c653f3cf2e54da55c4296825096d71b17
   // {
   //   id: "grups",
   //   title: "Grups",
