@@ -2,17 +2,30 @@ import React, { useState } from "react";
 import ProjectCard from "./ProjectCard";
 import SkillCard from "./SkillCard";
 import Footer from "./Footer";
-import bitesLogo from "../assets/biteslogo.png";
+
+import shopPage from "../assets/gothliat/shopPage.png";
+import productPage from "../assets/gothliat/productPage.png";
 
 const PROJECTS = [
+  {
+    id: "sunyi",
+    title: "SUNYI",
+    short: "Local music gig finder",
+    description: "STILL IN DEVELOPMENT",
+    tech: ["React", "Go", "Typescript", "Node.js", "PostgreSQL"],
+    img: "na",
+    year: 2025,
+    live: "#",
+    repo: "https://github.com/Aeschyluos/sunyi",
+  },
   {
     id: "gothliat",
     title: "GOTHLIAT",
     short: "Digital store of reworked clothing",
     description:
       "An online store that modify thrift clothing into unique pieces. I built the product catalog and individual product pages with a complete checkout process, and I designed and implemented a backed inventory system.",
-    tech: ["React", "Material UI", "Node.js", "Express", "MongoDB"],
-    img: "na",
+    tech: ["React", "Material UI", "Node.js", "MongoDB"],
+    img: [shopPage, productPage],
     year: 2024,
     live: "#",
     repo: "https://github.com/Aeschyluos/catalog",

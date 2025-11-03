@@ -1,11 +1,26 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { FiChevronRight, FiChevronLeft } from "react-icons/fi";
 
 export default function ProjectCard({ project }) {
   const [isExpanded, setIsExpanded] = useState(false);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   const toggleExpand = () => {
     setIsExpanded(!isExpanded);
+  };
+
+  const images = Array.isArray(project.img) ? project.img : [project.img];
+  const hasMultipleImages = images.length > 1;
+
+  const goToPrevious = (e) => {
+    e.stopPropagation();
+    setCurrentImageIndex((prev) => (prev === 0 ? images.length - 1 : prev - 1));
+  };
+
+  const goToNext = (e) => {
+    e.stopPropagation();
+    setCurrentImageIndex((prev) => (prev === images.length - 1 ? 0 : prev + 1));
   };
 
   return (
@@ -111,33 +126,122 @@ export default function ProjectCard({ project }) {
                 )}
 
                 {project.img && project.img !== "na" && (
-                  <div className="mb-4">
-                    <div className="flex flex-wrap gap-2">
-                      {Array.isArray(project.img) ? (
-                        project.img.map((image, i) => (
+                  <div
+                    style={{
+                      marginBottom: "1rem",
+                    }}
+                  >
+                    <div
+                      style={{
+                        position: "relative",
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                      }}
+                    >
+                      <AnimatePresence mode="wait">
+                        <motion.div
+                          key={currentImageIndex}
+                          initial={{ opacity: 0 }}
+                          animate={{ opacity: 1 }}
+                          exit={{ opacity: 0 }}
+                          transition={{ duration: 0.3 }}
+                        >
                           <img
-                            key={i}
-                            src={image}
-                            alt={`${project.title} screenshot ${i + 1}`}
+                            src={images[currentImageIndex]}
+                            alt={`${project.title} screenshot ${
+                              currentImageIndex + 1
+                            }`}
                             style={{
-                              width: "150px",
-                              height: "100px",
+                              width: "100%",
+                              height: "auto",
                               objectFit: "cover",
                               borderRadius: "8px",
+                              display: "block",
                             }}
                           />
-                        ))
-                      ) : (
-                        <img
-                          src={project.img}
-                          alt={`${project.title} screenshot`}
-                          style={{
-                            width: "150px",
-                            height: "100px",
-                            objectFit: "cover",
-                            borderRadius: "8px",
-                          }}
-                        />
+                        </motion.div>
+                      </AnimatePresence>
+
+                      {hasMultipleImages && (
+                        <>
+                          <button
+                            onClick={goToPrevious}
+                            style={{
+                              position: "absolute",
+                              left: "8px",
+                              top: "50%",
+                              transform: "translateY(-50%)",
+                              backgroundColor: "rgba(0, 0, 0, 0.5)",
+                              border: "none",
+                              color: "white",
+                              padding: "6px",
+                              borderRadius: "4px",
+                              cursor: "pointer",
+                              display: "flex",
+                              alignItems: "center",
+                              justifyContent: "center",
+                              transition: "background-color 0.2s ease",
+                            }}
+                            onMouseEnter={(e) => {
+                              e.currentTarget.style.backgroundColor =
+                                "rgba(199,199,199,0.08)";
+                            }}
+                            onMouseLeave={(e) => {
+                              e.currentTarget.style.backgroundColor =
+                                "rgba(0, 0, 0, 0.5)";
+                            }}
+                          >
+                            <FiChevronLeft size={20} />
+                          </button>
+
+                          <button
+                            onClick={goToNext}
+                            style={{
+                              position: "absolute",
+                              right: "8px",
+                              top: "50%",
+                              transform: "translateY(-50%)",
+                              backgroundColor: "rgba(0, 0, 0, 0.5)",
+                              border: "none",
+                              color: "white",
+                              padding: "6px",
+                              borderRadius: "4px",
+                              cursor: "pointer",
+                              display: "flex",
+                              alignItems: "center",
+                              justifyContent: "center",
+                              transition: "background-color 0.2s ease",
+                            }}
+                            onMouseEnter={(e) => {
+                              e.currentTarget.style.backgroundColor =
+                                "rgba(199,199,199,0.08)";
+                            }}
+                            onMouseLeave={(e) => {
+                              e.currentTarget.style.backgroundColor =
+                                "rgba(0, 0, 0, 0.5)";
+                            }}
+                          >
+                            <FiChevronRight size={20} />
+                          </button>
+
+                          <div
+                            style={{
+                              position: "absolute",
+                              bottom: "12px",
+                              left: "50%",
+                              transform: "translateX(-50%)",
+                              backgroundColor: "rgba(0, 0, 0, 0.18)",
+                              padding: "6px 12px",
+                              borderRadius: "12px",
+                              color: "white",
+                              fontSize: "12px",
+                              fontWeight: "500",
+                            }}
+                          >
+                            {currentImageIndex + 1} / {images.length}
+                          </div>
+                        </>
                       )}
                     </div>
                   </div>
