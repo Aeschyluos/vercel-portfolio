@@ -3,17 +3,26 @@ import ProjectCard from "./ProjectCard";
 import SkillCard from "./SkillCard";
 import Footer from "./Footer";
 
+//gothliat
 import shopPage from "../assets/gothliat/shopPage.png";
 import productPage from "../assets/gothliat/productPage.png";
+
+// sunyi
+import homePage from "../assets/sunyi/homePage.png";
+import mapPage from "../assets/sunyi/mapPage.png";
+import loginPage from "../assets/sunyi/loginPage.png";
+import createPage1 from "../assets/sunyi/createPage1.png";
+import createPage2 from "../assets/sunyi/createPage2.png";
 
 const PROJECTS = [
   {
     id: "sunyi",
     title: "SUNYI",
     short: "Local music gig finder",
-    description: "STILL IN DEVELOPMENT",
-    tech: ["React", "Go", "Typescript", "Node.js", "PostgreSQL"],
-    img: "na",
+    description:
+      "A local gig/event discovery website, where people can browse to find upcoming shows in Jakarta. It is complete with an interactive map, users can register/log in, and the ability to create gigs",
+    tech: ["React", "Go", "Typescript", "Next.js", "PostgreSQL"],
+    img: [homePage, mapPage, loginPage, createPage1, createPage2],
     year: 2025,
     live: "#",
     repo: "https://github.com/Aeschyluos/sunyi",
@@ -30,22 +39,18 @@ const PROJECTS = [
     live: "#",
     repo: "https://github.com/Aeschyluos/catalog",
   },
-
-  // {
-  //   id: "grups",
-  //   title: "Grups",
-  //   short: "Social platform for college students in Indonesia",
-  //   description: "Longer description here...",
-  //   tech: ["React", "Node", "Material UI"],
-  //   img: "na",
-  //   year: 2022,
-  //   live: "#",
-  //   repo: "na",
-  // },
 ];
 
 const SKILLS = {
   Languages: [
+    {
+      name: "Java",
+      logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg",
+    },
+    {
+      name: "JavaScript",
+      logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg",
+    },
     {
       name: "Python",
       logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg",
@@ -55,12 +60,12 @@ const SKILLS = {
       logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg",
     },
     {
-      name: "Java",
-      logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg",
+      name: "Go",
+      logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/go/go-original.svg",
     },
     {
-      name: "JavaScript",
-      logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg",
+      name: "Typescript",
+      logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg",
     },
   ],
   "Web Development": [
@@ -69,12 +74,16 @@ const SKILLS = {
       logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
     },
     {
+      name: "Node.js",
+      logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg",
+    },
+    {
       name: "Next.js",
       logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg",
       invert: true,
     },
     {
-      name: "Vite",
+      name: "Vite.js",
       logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vitejs/vitejs-original.svg",
     },
     {
@@ -84,12 +93,20 @@ const SKILLS = {
   ],
   Data: [
     {
+      name: "MySQL",
+      logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg",
+    },
+    {
+      name: "PostgreSQL",
+      logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg",
+    },
+    {
       name: "MongoDB",
       logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg",
     },
     {
-      name: "MySQL",
-      logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg",
+      name: "Supabase",
+      logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/supabase/supabase-original.svg",
     },
     {
       name: "R",
